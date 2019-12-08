@@ -17,6 +17,7 @@
       integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/code-highlighter/2.2.0/code-highlighter.min.js"></script>
   </head>
   <body>
     <!-- Navigation -->
@@ -88,7 +89,15 @@
               <li>reformat</li>
             </ul>
           </section>
-          <section>Search or Replace</section>
+          <section>
+            <img
+              src="img/slide2/1.png"
+              width="400px"
+              height="400px"
+              alt=""
+              srcset=""
+            />
+          </section>
         </section>
         <section>
           <h2>Literal Matches</h2>
@@ -101,13 +110,34 @@
           </section>
           <section>
             For example:
-            <pre>
-              <code>
-RegEx: /my/
-String: "RSs is a great place to learn to code with my friends"
-              </code>
-
-            </pre>
+            <textarea
+              class="code-highlighter"
+              data-syntax="javascript"
+              data-color-scheme="apple"
+              data-lines="1em"
+            >
+                RegEx: /my/
+                String: "RSs is a great place to learn to code with my friends"
+            </textarea>
+          </section>
+          <section>
+              <textarea
+              class="code-highlighter"
+              data-syntax="javascript"
+              data-color-scheme="apple"
+              data-lines="1em"
+                  >function SearchInStr(regex,str){
+                      let m;
+                      while ((m = regex.exec(str)) !== null) {
+                          if (m.index === regex.lastIndex) {
+                              regex.lastIndex++;
+                          }
+                          m.forEach((match, groupIndex) => {
+                              console.log(`Found match, group ${groupIndex}: ${match}`);
+                          });
+                      }
+                    }
+            </textarea>
           </section>
           <section>
             Multiple matches:
@@ -126,13 +156,16 @@ String: "RSs is a great place to learn to code with my friends"
           </section>
           <section>
             <p>For example:</p>
-            <pre>
-                <code>
-RegEx: /code./
-String: "My original code was saved in the file code1.js and the updated version is in codeFinal.js but I later changed code1.js to code1.old.js"
-                </code>
-               
-              </pre>
+            <textarea
+              class="code-highlighter"
+              data-syntax="javascript"
+              data-color-scheme="apple"
+              data-lines="1em"
+            >
+            RegEx: /code./
+            String: "My original code was saved in the file code1.js and the updated version is in codeFinal.js but I later changed code1.js to code1.old.js"
+            
+            </textarea>
             <p>Results:</p>
             <ul>
               <li>[0] => code</li>
@@ -173,12 +206,16 @@ String: "My original code was saved in the file code1.js and the updated version
               The solution is to escape the metacharacters by preceding them
               with a <b>backslash</b> .
             </p>
-            <pre>
-                <code>
-RegEx: /1 \+ 3 \* \(2 \+ 2\)/
-String: "1 + 3 * (2 + 2)"                </code>
-               
-              </pre>
+            <textarea
+              class="code-highlighter"
+              data-syntax="javascript"
+              data-color-scheme="apple"
+              data-lines="1em"
+            >
+          RegEx: /1 \+ 3 \* \(2 \+ 2\)/
+          String: "1 + 3 * (2 + 2)"   
+          
+          </textarea>
           </section>
         </section>
         <section>
@@ -194,42 +231,54 @@ String: "1 + 3 * (2 + 2)"                </code>
             <p>
               For example, <b> [XYZ]</b> will match any of the three characters:
             </p>
-            <pre>
-                <code>
-RegEx: /[XYZ]code\.js/ ,
-String: "I have few JS files named Xcode.js and Ycode.js but I don't have the file named Wcode.js"              </code>
-               
-              </pre>
+            <textarea
+              class="code-highlighter"
+              data-syntax="javascript"
+              data-color-scheme="apple"
+              data-lines="1em"
+            >
+          RegEx: /[XYZ]code\.js/ ,
+          String: "I have few JS files named Xcode.js and Ycode.js but I don't have the file named Wcode.js"  
+        
+        </textarea>
           </section>
           <section>
-            <pre>
-                  <code>
-const regex = /[XYZ]code\.js/gm;
-const str = `I have few JS files named Xcode.js, Ycode.js, and Zcode.js but I don't have the file named Wcode.js. And a file gXcode.js.`;
-let m;
-
-while ((m = regex.exec(str)) !== null) {
-    if (m.index === regex.lastIndex) {
-        regex.lastIndex++;
-    }
-    m.forEach((match, groupIndex) => {
-        console.log(`Found match, group ${groupIndex}: ${match}`);
-    });
-}                 </code>
-                </pre>
+            <textarea
+              class="code-highlighter"
+              data-syntax="javascript"
+              data-color-scheme="apple"
+              data-lines="1em"
+            >
+                  const regex = /[XYZ]code\.js/gm;
+                  const str = `I have few JS files named Xcode.js, Ycode.js, and Zcode.js but I don't have the file named Wcode.js. And a file gXcode.js.`;
+                  let m;
+                  
+                  while ((m = regex.exec(str)) !== null) {
+                      if (m.index === regex.lastIndex) {
+                          regex.lastIndex++;
+                      }
+                      m.forEach((match, groupIndex) => {
+                          console.log(`Found match, group ${groupIndex}: ${match}`);
+                      });
+                  }      
+          
+          </textarea>
           </section>
           <section>
             <p>
               One of the most popular use cases of sets is matching both, upper
               and lowercase letters.
             </p>
-            <pre>
-                  <code>
-  
-RegEx: /[Cc]ode.js/ 
-String: "There are two files, Code.js and code.js"              </code>
-                 
-                </pre>
+            <textarea
+              class="code-highlighter"
+              data-syntax="javascript"
+              data-color-scheme="apple"
+              data-lines="1em"
+            >
+            RegEx: /[Cc]ode.js/ 
+            String: "There are two files, Code.js and code.js"       
+          
+          </textarea>
           </section>
         </section>
         <section>
@@ -240,28 +289,38 @@ String: "There are two files, Code.js and code.js"              </code>
             </p>
           </section>
           <section>
-            <pre>
-                <code>
-RegEx: /[^0-9]/ 
-String: "Today is 2018, I am 20 years old."              </code>
-               
-              </pre>
+            <textarea
+              class="code-highlighter"
+              data-syntax="javascript"
+              data-color-scheme="apple"
+              data-lines="1em"
+            >
+            RegEx: /[^0-9]/ 
+            String: "Today is 2018, I am 20 years old."       
+          
+          </textarea>
           </section>
           <section>
-            <pre><code>
-const regex = /[^0-9]/gm;
-const str = `"Today is 2018, I am 20 years old."`;
-let m;
+            <textarea
+              class="code-highlighter"
+              data-syntax="javascript"
+              data-color-scheme="apple"
+              data-lines="1em"
+            >
+                    const regex = /[^0-9]/gm;
+                    const str = `"Today is 2018, I am 20 years old."`;
+                    let m;
 
-while ((m = regex.exec(str)) !== null) {
-    if (m.index === regex.lastIndex) {
-        regex.lastIndex++;
-    }
-    m.forEach((match, groupIndex) => {
-        console.log(`Found match, group ${groupIndex}: ${match}`);
-    });
-}
-            </code></pre>
+                    while ((m = regex.exec(str)) !== null) {
+                        if (m.index === regex.lastIndex) {
+                            regex.lastIndex++;
+                        }
+                        m.forEach((match, groupIndex) => {
+                            console.log(`Found match, group ${groupIndex}: ${match}`);
+                        });
+                    }    
+          
+          </textarea>
           </section>
           <section>
             <p>
@@ -269,13 +328,19 @@ while ((m = regex.exec(str)) !== null) {
               following regex matches characters that are not numbers and
               capital letters:
             </p>
-            <pre>
-                <code>
-RegEx: /[^0-9^A-Z]/ 
-String: "Today is 2018, I am 20 years old." </code>
-              </pre>
+            <textarea
+              class="code-highlighter"
+              data-syntax="javascript"
+              data-color-scheme="apple"
+              data-lines="1em"
+            >
+          RegEx: /[^0-9^A-Z]/ 
+          String: "Today is 2018, I am 20 years old."
+        
+        </textarea>
           </section>
         </section>
+        <section>End.</section>
       </div>
     </div>
     <script src="index.js"></script>

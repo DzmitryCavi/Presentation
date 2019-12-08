@@ -2920,4 +2920,11 @@
  h3 {
    font-weight: 200;
  }
- 
+ img {
+   border: none !important;
+ }
+ .code-highlighter {
+		padding: 25px;
+		margin: 0 auto;
+		width: 95%;
+	}
