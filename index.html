@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+      integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav
+      id="mainNav"
+      class="hidden navbar navbar-default navbar-fixed-top navbar-custom"
+    >
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1"
+          >
+            <span class="sr-only">Toggle navigation</span> Menu
+            <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand" href="#page-top"> </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="hidden">
+              <a href="#page-top"></a>
+            </li>
+            <li class="page-scroll">
+              <a href="#/0">Io</a>
+            </li>
+            <li class="page-scroll">
+              <a href="#/1">Jobs</a>
+            </li>
+            <li class="page-scroll">
+              <a href="#/2">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide-->
+      <div class="slides">
+        <section>
+          <section>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <article class="material-card Red">
+                <h2>
+                  <span>RegEx</span>
+                  <img src="img/slide1/1.png" alt="" srcset="" />
+                </h2>
+              </article>
+            </div>
+          </section>
+        </section>
+        <section>
+          <h2>What are Regular Expressions?</h2>
+          <p></p>
+          <section></section>
+          <section>
+            <h5>Why use regular expressions ?</h5>
+            <ul>
+              <li>"(100)-100-1000" -> "(100)-XXX-XXXX"</li>
+              <li>email, IP adress or any form of data</li>
+              <li>rename</li>
+              <li>reformat</li>
+            </ul>
+          </section>
+          <section>Search or Replace</section>
+        </section>
+        <section>
+          <h2>Literal Matches</h2>
+          <p></p>
+          <section>
+            <p class="i">
+              A literal matches is when a given character or string is exactly
+              matched
+            </p>
+          </section>
+          <section>
+            For example:
+            <pre>
+              <code>
+RegEx: /my/
+String: "RSs is a great place to learn to code with my friends"
+              </code>
+
+            </pre>
+          </section>
+          <section>
+            Multiple matches:
+            <p>
+              In JavaScript, the optional g(global) flag returns an array of all
+              the matches
+            </p>
+            <img src="img/slide3/1.PNG" alt="" srcset="" />
+          </section>
+        </section>
+        <section>
+          <h2>The Dot</h2>
+
+          <section>
+            The dot matches any single character (except line breaks).
+          </section>
+          <section>
+            <p>For example:</p>
+            <pre>
+                <code>
+RegEx: /code./
+String: "My original code was saved in the file code1.js and the updated version is in codeFinal.js but I later changed code1.js to code1.old.js"
+                </code>
+               
+              </pre>
+            <p>Results:</p>
+            <ul>
+              <li>[0] => code</li>
+              <li>[1] => code1</li>
+              <li>[2] => codeF</li>
+              <li>[3] => code1</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h2>Matching Special Characters</h2>
+          <section>
+            <p>
+              There may be cases when you need to match special characters, like
+              <b> metacharacters</b>.
+            </p>
+          </section>
+          <section>
+            <ul>
+              <li>\ (backslash)</li>
+              <li>^ (caret)</li>
+              <li>$ (dollar)</li>
+              <li>. (dot)</li>
+              <li>| (vertical bar)</li>
+            </ul>
+            <span>
+              <ul>
+                <li>? (question mark)</li>
+                <li>* (asterisk)</li>
+                <li>+ (plus)</li>
+                <li>[ ] (square brackets)</li>
+                <li>{} (curly brackers)</li>
+              </ul>
+            </span>
+          </section>
+          <section>
+            <p>
+              The solution is to escape the metacharacters by preceding them
+              with a <b>backslash</b> .
+            </p>
+            <pre>
+                <code>
+RegEx: /1 \+ 3 \* \(2 \+ 2\)/
+String: "1 + 3 * (2 + 2)"                </code>
+               
+              </pre>
+          </section>
+        </section>
+        <section>
+          <h2>Character Classes</h2>
+          <section>
+            <p>
+              Character Classes (also called Character Sets) allow matching a
+              <b>range of characters.</b> Character classes are defined using
+              <b>[</b> and <b>]</b> .
+            </p>
+          </section>
+          <section>
+            <p>
+              For example, <b> [XYZ]</b> will match any of the three characters:
+            </p>
+            <pre>
+                <code>
+RegEx: /[XYZ]code\.js/ ,
+String: "I have few JS files named Xcode.js and Ycode.js but I don't have the file named Wcode.js"              </code>
+               
+              </pre>
+          </section>
+          <section>
+            <pre>
+                  <code>
+const regex = /[XYZ]code\.js/gm;
+const str = `I have few JS files named Xcode.js, Ycode.js, and Zcode.js but I don't have the file named Wcode.js. And a file gXcode.js.`;
+let m;
+
+while ((m = regex.exec(str)) !== null) {
+    if (m.index === regex.lastIndex) {
+        regex.lastIndex++;
+    }
+    m.forEach((match, groupIndex) => {
+        console.log(`Found match, group ${groupIndex}: ${match}`);
+    });
+}                 </code>
+                </pre>
+          </section>
+          <section>
+            <p>
+              One of the most popular use cases of sets is matching both, upper
+              and lowercase letters.
+            </p>
+            <pre>
+                  <code>
+  
+RegEx: /[Cc]ode.js/ 
+String: "There are two files, Code.js and code.js"              </code>
+                 
+                </pre>
+          </section>
+        </section>
+        <section>
+          <h2>Negated Character Classes</h2>
+          <section>
+            <p>
+              The caret (^) metacharecter can be used to deny a character set
+            </p>
+          </section>
+          <section>
+            <pre>
+                <code>
+RegEx: /[^0-9]/ 
+String: "Today is 2018, I am 20 years old."              </code>
+               
+              </pre>
+          </section>
+          <section>
+            <pre><code>
+const regex = /[^0-9]/gm;
+const str = `"Today is 2018, I am 20 years old."`;
+let m;
+
+while ((m = regex.exec(str)) !== null) {
+    if (m.index === regex.lastIndex) {
+        regex.lastIndex++;
+    }
+    m.forEach((match, groupIndex) => {
+        console.log(`Found match, group ${groupIndex}: ${match}`);
+    });
+}
+            </code></pre>
+          </section>
+          <section>
+            <p>
+              Multiple character ranges can be negated as well. For example, the
+              following regex matches characters that are not numbers and
+              capital letters:
+            </p>
+            <pre>
+                <code>
+RegEx: /[^0-9^A-Z]/ 
+String: "Today is 2018, I am 20 years old." </code>
+              </pre>
+          </section>
+        </section>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
